@@ -7,7 +7,7 @@
         <div class="sales-report-area sales-style-two">
             <div class="mt-3">
                 <div class="header-title">
-                    <h5>Selamat Datang, <i>Nama Kamu</i></h5>
+                    <h5>Selamat Datang, <i><?php echo $this->session->userdata('username'); ?></i></h5>
                 </div>
             </div>
             <div class="relative">
