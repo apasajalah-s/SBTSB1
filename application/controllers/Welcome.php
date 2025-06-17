@@ -36,9 +36,12 @@ class Welcome extends CI_Controller
 
 		$user = $this->M_Login->tb_user($username, $password);
 		if ($user) {
-			redirect('home');
+			$this->session->set_userdata('username', $user->username);
+			$this->session->set_userdata('user_id', $user->user_id);
+			redirect('home'); 
 		} else {
 			redirect('Welcome');
 		}
 	}
 }
+
