@@ -3,19 +3,29 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Detail_pertandingan extends CI_Controller
 {
-    public function index()
+    public function __construct()
     {
-        $this->load->view('layout/headers');
-        $this->load->view('layout/navigation');
-        $this->load->view('v_detail_pertandingan');
-        $this->load->view('layout/footers');
+        parent::__construct();
+        $this->load->model('M_Match');
     }
 
-    public function entri()
+    public function index($id = null)
     {
+        if ($id === null) {
+            $utama = $this->M_Match->get_pertandingan_utama(); // fallback
+            $id = $utama->match_id;
+        }
+
+        $utama = $this->M_Match->get_match_by_id($id);
+        if (!$utama) {
+            show_error('Data tidak ditemukan');
+        }
+
+        $data['utama'] = $utama;
+
         $this->load->view('layout/headers');
         $this->load->view('layout/navigation');
-        $this->load->view('v_peminjaman_entri');
+        $this->load->view('v_detail_pertandingan', $data);
         $this->load->view('layout/footers');
     }
 }
