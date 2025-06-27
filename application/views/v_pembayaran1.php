@@ -54,49 +54,27 @@
                     </div>
                     <div class="metode-bayar">
                         <ul>
-                            <li><span>• Ovo</span> <button>
-                                    <p style="font-family: 'Comic sans MS', cursive, sans-serif; color: #000;">No rek : 082137370355</p>
-                                    <p style="font-family: 'Comic sans MS', cursive, sans-serif; color: #000;">An. Syakirurrahman</p>
-                                </button>
-                            </li>
-                            <li><span>• Go-pay</span> <button>
-                                    <p style="font-family: 'Comic sans MS', cursive, sans-serif; color: #000;">No rek : 082137370355</p>
-                                    <p style="font-family: 'Comic sans MS', cursive, sans-serif; color: #000;">An. Syakirurrahman</p>
-                                </button>
-                            </li>
-                            <li><span>• Dana</span> <button>
-                                    <p style="font-family: 'Comic sans MS', cursive, sans-serif; color: #000;">No rek : 082137370355</p>
-                                    <p style="font-family: 'Comic sans MS', cursive, sans-serif; color: #000;">An. Syakirurrahman</p>
-                                </button>
-                            </li>
+                            <li><span>• Ovo</span> <button>Ovo</button></li>
+                            <li><span>• Go-pay</span> <button>Go-pay</button></li>
+                            <li><span>• Dana</span> <button>Dana</button></li>
                             <li><span>• Transfer Bank</span> <button>Pilih</button></li>
                         </ul>
                     </div>
 
                     <div class="gambar-stadion">
                         <img src="<?= base_url('assets/image/tribun-psn.jpeg') ?>" alt="Tribun">
-                        <div class="zona-info">
-                            <div class="zona-nama" style="background: <?= $kursi->warna ?>;">
-                                <?= $kursi->kursi ?>
-                            </div>
-                            <div class="zona-harga">Rp<?= number_format($kursi->harga, 0, 0, '.') ?></div>
-                        </div>
                     </div>
                 </div>
 
                 <!-- Kolom KANAN -->
                 <div class="kolom-kanan">
-                    <form onsubmit="return validateEmail()" action="<?= base_url('pembayaran/simpan') ?>" method="post" enctype="multipart/form-data">
+                    <form action="<?= base_url('pembayaran/simpan') ?>" method="post" enctype="multipart/form-data">
                         <input type="hidden" name="match_id" value="<?= $utama->match_id ?>">
-                        <input type="hidden" name="zona" value="<?= $kursi->kursi ?>">
-                        <input type="hidden" name="jumlah" value="<?= $kursi->harga ?>">
-
                         <label>Nama :</label>
                         <input type="text" name="nama" required>
 
                         <label>Email :</label>
                         <input type="email" name="email" required>
-                        <small>*pastikan email benar</small>
 
                         <label>No Hp :</label>
                         <input type="text" name="no_hp" required>
@@ -119,18 +97,6 @@
                 </div>
 
             </div>
-            <script>
-                function validateEmail() {
-                    const email = document.getElementById('email').value;
-                    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                    if (!regex.test(email)) {
-                        alert("Masukkan email yang valid!");
-                        return false;
-                    }
-                    return true;
-                }
-            </script>
-            </form>
 
         </div>
     </div>

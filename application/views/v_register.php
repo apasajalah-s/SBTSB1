@@ -1,5 +1,5 @@
-<!doctype html>
-<html class="no-js" lang="en">
+<!DOCTYPE html>
+<html>
 
 <head>
     <meta charset="utf-8">
@@ -18,40 +18,51 @@
     <div id="preloader">
         <div class="loader"></div>
     </div>
-    <!-- preloader area end -->
-    <!-- login area start -->
+
     <div class="login-area">
         <div class="container">
             <div class="login-box">
-                <form method="POST" action="<?php echo base_url() ?>/Welcome/auth/">
+                <form action="<?= base_url('auth/register_action') ?>" method="post">
                     <div class="login-form-head">
-                        <h4>LOGIN</h4>
+                        <h4>REGISTER</h4>
                         <h1>Sistem Booking Tiket</h1>
                         <p>Stadion Bola</p>
                     </div>
                     <div class="login-form-body">
                         <div class="form-gp">
+                            <label>Nama</label>
+                            <input type="text" name="nama" placeholder="Nama" required>
+                            <div class="text-danger"></div>
+                        </div>
+                        <div class="form-gp">
                             <label>Username</label>
-                            <input type="text" name="username" placeholder="username"></i>
+                            <input type="text" name="username" placeholder="Username" required>
+                            <div class="text-danger"></div>
+                        </div>
+                        <div class="form-gp">
+                            <label>Email</label>
+                            <input type="email" name="email" placeholder="Email" required>
+                            <div class="text-danger"></div>
+                        </div>
+                        <div class="form-gp">
+                            <label>No HP</label>
+                            <input type="text" name="no_hp" placeholder="No HP" required>
                             <div class="text-danger"></div>
                         </div>
                         <div class="form-gp">
                             <label>Password</label>
-                            <input type="password" name="password" placeholder="password"></i>
+                            <input type="password" name="password" placeholder="Password" required>
                             <div class="text-danger"></div>
                         </div>
                         <div class="submit-btn-area">
-                            <button id="form_submit" type="submit">Submit<i class="ti-arrow-right"></i></button>
-                            <a href="#" class="forgot-link">Lupa Password?</a>
-                            <a href="<?php echo base_url() ?>auth/register">Register</a>
+                            <button id="form_submit" type="submit">Daftar<i class="ti-arrow-right"></i></button>
                         </div>
-                        
                     </div>
                 </form>
             </div>
         </div>
     </div>
-    <!-- login area end -->
+    
 
     <!-- jquery latest version -->
     <script src="<?php echo base_url(); ?>assets/login/js/vendor/jquery-2.2.4.min.js"></script>

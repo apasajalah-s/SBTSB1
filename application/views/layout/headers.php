@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>SI Booking Tiket</title>
+    <title>SI-BOTI</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="<?php echo base_url() ?>favicon.ico" rel="icon">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/dashboard/css/bootstrap.min.css">
@@ -27,5 +27,6 @@
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/dashboard/css/responsive.css">
     <!-- modernizr css -->
     <script src="<?php echo base_url(); ?>assets/dashboard/js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 
 </head>
