@@ -7,11 +7,17 @@ class Konfirmasi extends CI_Controller
     {
         parent::__construct();
         $this->load->model('M_Match');
+<<<<<<< HEAD
         $this->load->model('M_Booking');
         $this->load->library('ciqrcode');
     }
 
     public function index1($id = null)
+=======
+    }
+
+    public function index($id = null)
+>>>>>>> 70bf2f1e51b2677d8fa0e346834c3cc0f9fd9273
     {
         if ($id === null) {
             $utama = $this->M_Match->get_pertandingan_utama(); // fallback
@@ -27,6 +33,7 @@ class Konfirmasi extends CI_Controller
 
         $this->load->view('layout/headers');
         $this->load->view('layout/navigation');
+<<<<<<< HEAD
         $this->load->view('v_konfirmasi1', $data);
         $this->load->view('layout/footers');
     }
@@ -113,5 +120,9 @@ class Konfirmasi extends CI_Controller
         $this->load->view('v_konfirmasi', $data);
         $this->load->view('layout/footers');
         
+=======
+        $this->load->view('v_konfirmasi', $data);
+        $this->load->view('layout/footers');
+>>>>>>> 70bf2f1e51b2677d8fa0e346834c3cc0f9fd9273
     }
 }

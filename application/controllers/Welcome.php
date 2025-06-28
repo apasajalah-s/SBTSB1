@@ -34,7 +34,7 @@ class Welcome extends CI_Controller
 		$username = $this->input->post("username");
 		$password = $this->input->post("password");
 
-		$user = $this->M_Login->tb_user($username, $password);
+		$user = $this->M_Login->user($username, $password);
 		if ($user) {
 			$this->session->set_userdata('username', $user->username);
 			$this->session->set_userdata('user_id', $user->user_id);
