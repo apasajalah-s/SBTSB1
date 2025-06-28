@@ -2349,6 +2349,7 @@ table.dataTable thead td {
     align-items: center;
 }
 
+
 .form-gp {
     margin-bottom: 20px;
 }
@@ -2378,6 +2379,8 @@ table.dataTable thead td {
     padding: 10px 40px 10px 20px;
     border: 2px solid #000000;
     border-radius: 30px;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+
 }
 
 .form-gp input::-webkit-input-placeholder {

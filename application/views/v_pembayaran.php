@@ -29,26 +29,109 @@
                     <div class="score" style="font-family: 'Comic Sans MS', cursive, sans-serif;">
                         <div class="team-a">
                             <img src="<?php echo base_url('/assets/image/shield-1.png') ?>" alt="Shield" style="color: red;">
-                            <a>Team A</a>
+                            <a><?= $utama->tim_tuan_rumah ?></a>
                         </div>
                         0 vs 0
                         <div class="team-b">
+                            <a><?= $utama->tim_tamu ?></a>
                             <img src="<?php echo base_url('/assets/image/shield-2.png') ?>" alt="Shield">
-                            <a>Team B</a>
                         </div>
                     </div>
                     <div class="date" style="font-family: 'Comic Sans MS', cursive, sans-serif;">
-                        24 Agustus 2025 | 18:00
+                        <?= date('d F Y', strtotime($utama->tanggal)) ?> | <?= date('H:i', strtotime($utama->waktu)) ?>
                     </div>
                     <div class="location" style="font-family: 'Comic Sans MS', cursive, sans-serif;">
-                        Stadion Harapan Bangsa : Banda Aceh
+                        <?= $utama->lokasi_stadion ?> : Banda Aceh
                     </div>
                 </div>
             </div>
 
-            <div class="kursi">
-                <img src="<?php echo base_url('/assets/image/tribun-psn.jpeg') ?>" alt="Zona Tribun">
+            <div class="pembayaran-wrapper">
+                <!-- Kolom KIRI -->
+                <div class="kolom-kiri">
+                    <div class="judul-metode">
+                        <h3>Metode Pembayaran</h3>
+                    </div>
+                    <div class="metode-bayar">
+                        <ul>
+                            <li><span>• Ovo</span> <button>
+                                    <p style="font-family: 'Comic sans MS', cursive, sans-serif; color: #000;">No rek : 082137370355</p>
+                                    <p style="font-family: 'Comic sans MS', cursive, sans-serif; color: #000;">An. Syakirurrahman</p>
+                                </button>
+                            </li>
+                            <li><span>• Go-pay</span> <button>
+                                    <p style="font-family: 'Comic sans MS', cursive, sans-serif; color: #000;">No rek : 082137370355</p>
+                                    <p style="font-family: 'Comic sans MS', cursive, sans-serif; color: #000;">An. Syakirurrahman</p>
+                                </button>
+                            </li>
+                            <li><span>• Dana</span> <button>
+                                    <p style="font-family: 'Comic sans MS', cursive, sans-serif; color: #000;">No rek : 082137370355</p>
+                                    <p style="font-family: 'Comic sans MS', cursive, sans-serif; color: #000;">An. Syakirurrahman</p>
+                                </button>
+                            </li>
+                            <li><span>• Transfer Bank</span> <button>Pilih</button></li>
+                        </ul>
+                    </div>
+
+                    <div class="gambar-stadion">
+                        <img src="<?= base_url('assets/image/tribun-psn.jpeg') ?>" alt="Tribun">
+                        <div class="zona-info">
+                            <div class="zona-nama" style="background: <?= $kursi->warna ?>;">
+                                <?= $kursi->kursi ?>
+                            </div>
+                            <div class="zona-harga">Rp<?= number_format($kursi->harga, 0, 0, '.') ?></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kolom KANAN -->
+                <div class="kolom-kanan">
+                    <form onsubmit="return validateEmail()" action="<?= base_url('pembayaran/simpan') ?>" method="post" enctype="multipart/form-data">
+                        <input type="hidden" name="match_id" value="<?= $utama->match_id ?>">
+                        <input type="hidden" name="zona" value="<?= $kursi->kursi ?>">
+                        <input type="hidden" name="jumlah" value="<?= $kursi->harga ?>">
+
+                        <label>Nama :</label>
+                        <input type="text" name="nama" required>
+
+                        <label>Email :</label>
+                        <input type="email" name="email" required>
+                        <small>*pastikan email benar</small>
+
+                        <label>No Hp :</label>
+                        <input type="text" name="no_hp" required>
+
+                        <label>Upload Bukti Bayar</label>
+                        <input type="file" name="file_bukti" accept=".jpg, .jpeg, .png" required>
+                        <small>*Ukuran max 300mb</small>
+
+                        <label>Metode Pembayaran:</label>
+                        <select name="metode_pembayaran" required>
+                            <option value="Ovo">Ovo</option>
+                            <option value="Go-pay">Go-pay</option>
+                            <option value="Dana">Dana</option>
+                            <option value="Transfer Bank">Transfer Bank</option>
+                        </select>
+
+                        <button type="submit" class="btn-bayar">Bayar Sekarang</button>
+                    </form>
+
+                </div>
+
             </div>
+            <script>
+                function validateEmail() {
+                    const email = document.getElementById('email').value;
+                    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!regex.test(email)) {
+                        alert("Masukkan email yang valid!");
+                        return false;
+                    }
+                    return true;
+                }
+            </script>
+            </form>
+
         </div>
     </div>
     </div>

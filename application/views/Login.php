@@ -43,6 +43,7 @@
                         <div class="submit-btn-area">
                             <button id="form_submit" type="submit">Submit<i class="ti-arrow-right"></i></button>
                             <a href="#" class="forgot-link">Lupa Password?</a>
+                            <a href="<?php echo base_url() ?>auth/register">Register</a>
                         </div>
                         
                     </div>

@@ -29,19 +29,19 @@
                     <div class="score" style="font-family: 'Comic Sans MS', cursive, sans-serif;">
                         <div class="team-a">
                             <img src="<?php echo base_url('/assets/image/shield-1.png') ?>" alt="Shield" style="color: red;">
-                            <a>Team A</a>
+                            <a><?= $utama->tim_tuan_rumah ?></a>
                         </div>
                         0 vs 0
                         <div class="team-b">
+                            <a><?= $utama->tim_tamu ?></a>
                             <img src="<?php echo base_url('/assets/image/shield-2.png') ?>" alt="Shield">
-                            <a>Team B</a>
                         </div>
                     </div>
                     <div class="date" style="font-family: 'Comic Sans MS', cursive, sans-serif;">
-                        24 Agustus 2025 | 18:00
+                        <?= date('d F Y', strtotime($utama->tanggal)) ?> | <?= date('H:i', strtotime($utama->waktu)) ?>
                     </div>
                     <div class="location" style="font-family: 'Comic Sans MS', cursive, sans-serif;">
-                        Stadion Harapan Bangsa : Banda Aceh
+                        <?= $utama->lokasi_stadion ?> | Banda Aceh
                     </div>
                 </div>
             </div>
@@ -51,7 +51,7 @@
                 <div>
                     <a href="https://maps.app.goo.gl/pqi1yweTnNg9Tgms9">Zona Tribun</a>
                 </div>
-                <a href="<?php echo base_url() ?>kursi" class=" btn-1">Pilih Kursi</a>
+                <a href="<?php echo base_url('kursi/index/' . $utama->match_id) ?> " class=" btn-1">Pilih Kursi</a>
             </div>
         </div>
     </div>

@@ -34,4 +34,8 @@ class Pertandingan extends CI_Controller
         $this->load->view('v_match');
         $this->load->view('layout/footers');
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 70bf2f1e51b2677d8fa0e346834c3cc0f9fd9273

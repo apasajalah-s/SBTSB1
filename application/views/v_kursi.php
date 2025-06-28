@@ -29,19 +29,19 @@
                     <div class="score" style="font-family: 'Comic Sans MS', cursive, sans-serif;">
                         <div class="team-a">
                             <img src="<?php echo base_url('/assets/image/shield-1.png') ?>" alt="Shield" style="color: red;">
-                            <a>Team A</a>
+                            <a><?= $utama->tim_tuan_rumah ?></a>
                         </div>
                         0 vs 0
                         <div class="team-b">
+                            <a><?= $utama->tim_tamu ?></a>
                             <img src="<?php echo base_url('/assets/image/shield-2.png') ?>" alt="Shield">
-                            <a>Team B</a>
                         </div>
                     </div>
                     <div class="date" style="font-family: 'Comic Sans MS', cursive, sans-serif;">
-                        24 Agustus 2025 | 18:00
+                        <?= date('d F Y', strtotime($utama->tanggal)) ?> | <?= date('H:i', strtotime($utama->waktu)) ?>
                     </div>
                     <div class="location" style="font-family: 'Comic Sans MS', cursive, sans-serif;">
-                        Stadion Harapan Bangsa : Banda Aceh
+                        <?= $utama->lokasi_stadion ?> : Banda Aceh
                     </div>
                 </div>
             </div>
@@ -50,12 +50,24 @@
                 <img src="<?php echo base_url('/assets/image/tribun-psn.jpeg') ?>" alt="Zona Tribun">
                 <div class="tiket">
                     <ul class="tombol">
-                        <li><button style="background: #FF0909;">a</button>60.000</li>
-                        <li><button style="background: #FEAA00;">b</button>60.000</li>
-                        <li><button style="background: #2E72FF;">c</button>40.000</li>
-                        <li><button style="background: #fff;">VIP</button>150.000</li>
-                        <li><button style="background: #FF36BC;">d</button>30.000</li>
-                        <li><button style="background: #00CAC3;">e</button>30.000</li>
+                        <li><a href="<?= base_url('pembayaran/index/' . $utama->match_id . '/A') ?>" style="background: #FF0909;" class="btn-kursi">A</a>
+                            <span class="harga">60.000</span>
+                        </li>
+                        <li><a href="<?= base_url('pembayaran/index/' . $utama->match_id . '/B') ?>" style="background: #FEAA00;" class="btn-kursi">B</a>
+                            <span class="harga">60.000</span>
+                        </li>
+                        <li><a href="<?= base_url('pembayaran/index/' . $utama->match_id . '/C') ?>" style="background: #2E72FF;" class="btn-kursi">C</a>
+                            <span class="harga">40.000</span>
+                        </li>
+                        <li><a href="<?= base_url('pembayaran/index/' . $utama->match_id . '/VIP') ?>" style="background: #D9D9D9;" class="btn-kursi">VIP</a>
+                            <span class="harga"></span>150.000
+                        </li>
+                        <li><a href="<?= base_url('pembayaran/index/' . $utama->match_id . '/D') ?>" style="background: #FF36BC;" class="btn-kursi">D</a>
+                            <span class="harga">30.000</span>
+                        </li>
+                        <li><a href="<?= base_url('pembayaran/index/' . $utama->match_id . '/E') ?>" style="background: #00CAC3;" class="btn-kursi">E</a>
+                            <span class="harga">30.000</span>
+                        </li>
                     </ul>
                 </div>
             </div>
