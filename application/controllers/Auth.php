@@ -27,4 +27,9 @@ class Auth extends CI_Controller
         $this->M_User->insert($data);
         redirect('welcome'); // Ubah ke login jika ada
     }
+
+    public function logout(){
+        $this->session->sess_destroy();
+        redirect('welcome');
+    }
 }

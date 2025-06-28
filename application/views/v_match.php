@@ -4,7 +4,7 @@
         <div class="row align-items-center">
             <div class="col-sm-12">
                 <div class="breadcrumbs-area clearfix" style="padding-top : 7px; padding-bottom : 7px">
-                    <h4 class="page-title" style="font-family: 'Comic Sans MS', Courier, monospace;">Detail Pertandingan</h4>
+                    <h4 class="page-title" style="font-family: 'Comic Sans MS', Courier, monospace;">Input Pertandingan</h4>
                     <ul class="breadcrumbs pull-left">
                         <li><a href="<?php echo base_url() ?>home">Admin</a></li>
                         <li><a href="<?php echo base_url() ?>home">Beranda</a></li>
